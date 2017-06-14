@@ -1,5 +1,7 @@
 import sys
 import os
+import datetime
+
 from WordCounter import WordCounter
 
 
@@ -14,8 +16,13 @@ def main():
         sys.exit(0)
 
     word_counter = WordCounter(path)
-    print(word_counter.count_words())
+    words = word_counter.count_words()
+    {print('%s:%s' % (item[0], item[1])) for item in words.items()}
 
 
 if __name__ == '__main__':
+    start = datetime.datetime.now()
     main()
+    end = datetime.datetime.now()
+    diff = end - start
+    print("Program execution took %d,%d seconds to execute" % (diff.seconds, diff.microseconds))

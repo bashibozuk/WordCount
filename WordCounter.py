@@ -46,4 +46,6 @@ class WordCounter:
         self.load()
         self.read_words()
 
-        return sorted(self.words, key=lambda x: self.words[x], reverse=True)
+        sorted_words =  sorted(self.words, key=lambda x: self.words[x], reverse=True)
+
+        return {word: self.words[word] for word in sorted_words}
