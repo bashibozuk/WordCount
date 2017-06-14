@@ -34,6 +34,5 @@ class WordCounter:
 
     @instrument
     def __extract_words(self, line):
-
         return [match for match in [word for word in line.split() if re.match('\w+', word)]
                 if match not in self.contractions]
