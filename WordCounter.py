@@ -1,4 +1,5 @@
 import re
+import os
 from instrumentation_decorator import instrument
 
 
@@ -19,7 +20,7 @@ class WordCounter:
 
     @instrument
     def __load(self):
-        with open('contractions.txt', 'r') as fp:
+        with open(os.path.join('data', 'contractions.txt'), 'r') as fp:
             self.contractions = [contraction.strip()
                                  for contraction in fp.read().split()]
 
