@@ -1,6 +1,7 @@
 import re
 from instrumentation_decorator import instrument
 
+
 class WordCounter:
     def __init__(self, path):
         self.words = {}
