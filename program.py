@@ -1,10 +1,11 @@
 import sys
 import os
-import datetime
+from instrumentation_decorator import instrument
 
 from WordCounter import WordCounter
 
 
+@instrument
 def main():
     if len(sys.argv) <= 1:
         print("Enter file name")
@@ -21,8 +22,4 @@ def main():
 
 
 if __name__ == '__main__':
-    start = datetime.datetime.now()
     main()
-    end = datetime.datetime.now()
-    diff = end - start
-    print("Program execution took %d,%d seconds to execute" % (diff.seconds, diff.microseconds))
